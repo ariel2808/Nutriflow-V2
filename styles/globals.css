@@ -1,0 +1,434 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* Color Token System - Light Mode */
+  --bg-main: #FFFFFF;
+  --bg-card: #F9F9F9;
+  --bg-main-rgb: 255, 255, 255;
+  --bg-card-rgb: 249, 249, 249;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6E6E6E;
+  --text-placeholder: #9E9E9E;
+  --btn-primary-bg: #4A90E2;
+  --btn-primary-text: #FFFFFF;
+  --btn-secondary-bg: #F0F0F0;
+  --btn-secondary-text: #4A90E2;
+  --border: #E5E5E5;
+  --icon-primary: #4A4A4A;
+  --icon-secondary: #9E9E9E;
+  --graph-grid: #E0E0E0;
+  --graph-data: #4A90E2;
+  --fab-bg: #4A90E2;
+  --input-bg: #FFFFFF;
+  --input-border: #E0E0E0;
+  --input-text: #1A1A1A;
+  --input-placeholder: #9E9E9E;
+  --tooltip-bg: #FFFFFF;
+  --tooltip-text: #1A1A1A;
+  
+  /* Legacy Shadcn variables mapped to new tokens */
+  --background: var(--bg-main);
+  --foreground: var(--text-primary);
+  --card: var(--bg-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--tooltip-bg);
+  --popover-foreground: var(--tooltip-text);
+  --primary: var(--btn-primary-bg);
+  --primary-foreground: var(--btn-primary-text);
+  --secondary: var(--btn-secondary-bg);
+  --secondary-foreground: var(--btn-secondary-text);
+  --muted: var(--bg-card);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-card);
+  --accent-foreground: var(--text-primary);
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: var(--border);
+  --input: var(--input-bg);
+  --input-background: var(--input-bg);
+  --ring: var(--btn-primary-bg);
+  
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --radius: 0.625rem;
+  
+  /* Chart colors */
+  --chart-1: #4A90E2;
+  --chart-2: #10B981;
+  --chart-3: #F59E0B;
+  --chart-4: #EF4444;
+  --chart-5: #8B5CF6;
+}
+
+/* Dark mode theme - both .dark class and data-theme attribute support */
+.dark,
+:root[data-theme="dark"] {
+  /* Color Token System - Dark Mode - Updated to match user requirements */
+  --bg-main: #1c1c1e;
+  --bg-card: #2c2c2e;
+  --bg-main-rgb: 28, 28, 30;
+  --bg-card-rgb: 44, 44, 46;
+  --text-primary: #ffffff;
+  --text-secondary: #aeaeb2;
+  --text-placeholder: #8A8A8A;
+  --btn-primary-bg: #4A90E2;
+  --btn-primary-text: #FFFFFF;
+  --btn-secondary-bg: #2C2C2C;
+  --btn-secondary-text: #4A90E2;
+  --border: #2C2C2C;
+  --icon-primary: #ffffff;
+  --icon-secondary: #aeaeb2;
+  --graph-grid: rgba(255,255,255,0.1);
+  --graph-data: #5BA0F2; /* brand lighten 15% */
+  --fab-bg: #4A90E2;
+  --input-bg: #2A2A2A;
+  --input-border: #3A3A3A;
+  --input-text: #ffffff;
+  --input-placeholder: #8A8A8A;
+  --tooltip-bg: #2C2C2C;
+  --tooltip-text: #ffffff;
+  
+  /* Legacy Shadcn variables mapped to new dark tokens */
+  --background: var(--bg-main);
+  --foreground: var(--text-primary);
+  --card: var(--bg-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--tooltip-bg);
+  --popover-foreground: var(--tooltip-text);
+  --primary: var(--btn-primary-bg);
+  --primary-foreground: var(--btn-primary-text);
+  --secondary: var(--btn-secondary-bg);
+  --secondary-foreground: var(--btn-secondary-text);
+  --muted: var(--bg-card);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-card);
+  --accent-foreground: var(--text-primary);
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --ring: var(--btn-primary-bg);
+  
+  /* Enhanced chart colors for dark mode */
+  --chart-1: #5BA0F2;
+  --chart-2: #34D399;
+  --chart-3: #FBBF24;
+  --chart-4: #F87171;
+  --chart-5: #A78BFA;
+}
+
+@theme inline {
+  /* New Color Token Classes */
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-placeholder: var(--text-placeholder);
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-secondary-text: var(--btn-secondary-text);
+  --color-border: var(--border);
+  --color-icon-primary: var(--icon-primary);
+  --color-icon-secondary: var(--icon-secondary);
+  --color-graph-grid: var(--graph-grid);
+  --color-graph-data: var(--graph-data);
+  --color-fab-bg: var(--fab-bg);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-text: var(--input-text);
+  --color-input-placeholder: var(--input-placeholder);
+  --color-tooltip-bg: var(--tooltip-bg);
+  --color-tooltip-text: var(--tooltip-text);
+  
+  /* Legacy Shadcn mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    outline-color: hsl(var(--ring) / 50%);
+  }
+  
+  /* Apply border colors only to specific elements, not globally */
+  input, textarea, select, button, .card, .border {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+  }
+
+  /* Smooth transitions for all color-based properties */
+  * {
+    transition: background-color 200ms ease-in-out, 
+                border-color 200ms ease-in-out, 
+                color 200ms ease-in-out,
+                fill 200ms ease-in-out,
+                stroke 200ms ease-in-out;
+  }
+
+  /* Enhanced button states */
+  button:hover {
+    transition: all 150ms ease-in-out;
+  }
+
+  /* Input field enhancements */
+  input, textarea, select {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--input-text);
+    transition: background-color 200ms ease-in-out, 
+                border-color 200ms ease-in-out;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: var(--input-placeholder);
+  }
+
+  /* Card hover states */
+  [class*="card"]:hover {
+    transition: all 150ms ease-in-out;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+      color: var(--text-primary);
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* New utility classes for the token system */
+@layer utilities {
+  .bg-main { background-color: var(--bg-main); }
+  .bg-card { background-color: var(--bg-card); }
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-placeholder { color: var(--text-placeholder); }
+  .border-custom { border-color: var(--border); }
+  .text-icon-primary { color: var(--icon-primary); }
+  .text-icon-secondary { color: var(--icon-secondary); }
+}
+
+/* Bottom Navigation specific styles */
+@layer components {
+  .bottom-navigation {
+    background-color: var(--bg-main) !important;
+    border-top: 1px solid var(--border) !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+  }
+}
+
+/* Custom scrollbar styles for better visibility - apply only when needed */
+@layer components {
+  .scrollbar-visible::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb {
+    background-color: var(--icon-secondary);
+    border-radius: 3px;
+    opacity: 0.5;
+  }
+  
+  .scrollbar-visible::-webkit-scrollbar-thumb:hover {
+    background-color: var(--icon-primary);
+    opacity: 0.8;
+  }
+  
+  /* Firefox scrollbar for visible scrollbars */
+  .scrollbar-visible {
+    scrollbar-width: thin;
+    scrollbar-color: var(--icon-secondary) transparent;
+  }
+
+  /* Hidden scrollbar for integrated sections */
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* Daily View specific styles */
+  .daily-view-scroll {
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* iOS-style red for now line */
+  .now-line {
+    background-color: #FF3B30;
+  }
+
+  /* Enhanced event hover states - matching original EventItem styling */
+  .event-tile {
+    transition: all 200ms ease-out;
+    will-change: transform, background-color, box-shadow;
+    /* Subtle elevation to sit above grid lines - matching original cards */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 2;
+    border: none; /* Remove border to match original EventItem */
+  }
+
+  .event-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
+    z-index: 3;
+  }
+
+  .event-tile:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Dark mode shadow adjustments */
+  .dark .event-tile,
+  :root[data-theme="dark"] .event-tile {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark .event-tile:hover,
+  :root[data-theme="dark"] .event-tile:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .dark .event-tile:active,
+  :root[data-theme="dark"] .event-tile:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Background grid for daily view */
+  .daily-view-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .daily-view-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Daily View Grid Lines */
+  .daily-view-hour-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dark .daily-view-hour-line,
+  :root[data-theme="dark"] .daily-view-hour-line {
+    opacity: 0.4;
+  }
+}
